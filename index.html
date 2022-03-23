@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title> RentCar </title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <body>
+        <!--Esta es la tabla tipo footer, 2 img, 2 buttons-->
+        <table border="0" cellspacing="0" celpadding="0">
+            <tr>
+                <!--Img del lado del footer-->
+                <td colspan="5">
+                    <img src="https://img.icons8.com/color/48/000000/traffic-jam.png" alt="Logo">
+                </td>
+                <td align="right">
+                    <!--Boton de login-->
+                    <a href="login.php" name="btnSesion" id="btnSesion"> Iniciar Sesión </a>
+                    <!--Boton de registro-->
+                    <a href="registrar.php" name="btnRegistro" id="btnRegistro"> Registrarse </a>
+                    <!--Boton de ver perfil
+                    <a href="#" name="btnPerfil" id="btnPerfil"> Mi perfil </a>-->
+                    <!--Img de perfil del usuario-->
+                    <img src="https://img.icons8.com/color/48/000000/user-location.png" alt="Perfil">
+                <!--Se cierra la fila-->
+                </td>
+            <!--Se cierra la primera tabla tipo footer-->
+            </tr>
+
+            <!--Agregamos otra tabla, en esta se ubica el encabezado principal de la pagina-->
+            <tr bgcolor="white">
+                <!--Para unir las filas-->
+                <td colspan="3">
+                    <div>
+                        <!--Texto de encabezado-->
+                        <h1 align="center"> ¿Quieres alquilar un auto? </h1>
+                        <!--Parrafo-->
+                        <p align="center"> Nosotros somos la mejor opcion para que tus viajes sean inolvidables. </p>
+                        <p align="center"> Aqui puede encontrar autos que van de acuerdo a tus necesidades: </p>
+
+                        <!--Creamos una lista con vista de viñetas-->
+                        <ul>
+                            <!--Viñeta uno y descripcion-->
+                            <li> Precios accesibles </li>
+                            <!--Viñeta dos y descripcion-->
+                            <li> Comodidad </li>
+                            <!--Viñeta tres y descripcion-->
+                            <li> Seguridad </li>
+                        <!--Cerramos la lista-->
+                        </ul>
+
+                        <!--Agregamos un boton al contenedor que redirecciona a las reservaciones del cliente-->
+                        <a href="info.html" name="btnGo" id="btnGo"> Gestionar mi reserva... </a>
+                    <!--Se cierra contenedor-->
+                    </div>
+
+                    <!--Creamos otra tabla donde iran una imagenes de los vehiculos como pagina principal-->
+                    <!--Colspan para unir las filas-->
+                    <td colspan="3">
+                        <!--Img de portada principal-->
+                        <img src="assets/porta-da.jpg" width="100%" height="90%" alt="Car1">
+                    <!--Se cierra la tabla-->
+                    </td>
+                </td>
+            </tr>
+        </table>
+
+        <!--ELEMENTOS DE TARJETA -->
+        <div class="card-group">
+            <!--CONTENEDORES, IMAGENES, TEXT Y BOTONES-->
+            <div class="card" style="width: 200px">
+                <img src="assets/hon-da.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Honda Civic</h5>
+                    <li>Aire acondicionado</li>
+                    <li>Kilometraje: 186.000km</li>
+                    <li>Disponibles Automaticos</li>
+                    <li>Seguridad</li>
+                    <li>7 bolsas de aire</li>
+                    <li>3 luces de freno</li>
+                    <li>Precio: $60/dia</li>
+                    <a href="#" target="blank" class="btn btn-primary">
+                        Ver más detalles...
+                    </a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 200px">
+                <img src="assets/ni-ssan.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Nissan Kicks</h5>
+                    <li>Transmisión manual de 6 velocidades</li>
+                    <li>Kilometraje: 186.000km</li>
+                    <li>Configuración de Motor	4 CILINDROS</li>
+                    <li>Tipo de Combustible	DIESEL</li>
+                    <li>7 bolsas de aire</li>
+                    <li>Motor 2.4L diesel turbo Intercooler	</li>
+                    <li>Precio: $80.99/dia</li>
+                    <a href="#" target="blank" class="btn btn-primary">
+                        Ver más detalles...
+                    </a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 200px">
+                <img src="assets/toyo-ta.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Toyota Hilux</h5>
+                    <li>Aire acondicionado</li>
+                    <li>Kilometraje: 186.000km</li>
+                    <li>Ajuste de timón en altura y profundidad</li>
+                    <li>Ventanas eléctricas y cierre central</li>
+                    <li>Llantas 225/70 R17 C y rines de hierro</li>
+                    <li>3 Bolsas de aire</li>
+                    <li>Precio: $99/dia</li>
+                    <a href="#" target="blank" class="btn btn-primary">
+                        Ver más detalles...
+                    </a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 200px">
+                <img src="assets/105974912-vista-frontal-de-un-automóvil-moderno-genérico-y-sin-marca-sobre-una-ilustración-3d-de-fondo-blanco.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">BMW X4</h5>
+                    <li>Transmisión manual de 6 velocidades</li>
+                    <li>Kilometraje: 190.000km</li>
+                    <li>Configuración de Motor  4 CILINDROS</li>
+                    <li>Asientos deportivos</li>
+                    <li>7 bolsas de aire</li>
+                    <li>Motor 2.4L diesel turbo Intercooler </li>
+                    <li>Precio: $100.99/dia</li>
+                    <a href="#" target="blank" class="btn btn-primary"> Ver más detalles... </a>
+                </div>
+            </div>
+        </div>
+
+        <!--ESPACIO ENTRE LAS TARJETAS Y UNA DESCRIPCION-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--DESCRIPCION MOTIVACIONAL-->
+        <div class="description text-black">
+            <!--Texto del encabezado-->
+            <hr>
+            <h1> Desafia todos los terrenos con un nuevo nivel de agilidad y confort de conducción </h1>
+            <hr>
+
+        <!-- Cerramos el contenedor-->
+        </div>
+
+        <!-- div es el contenedor y SX82 es el nombre de la clase en el CSS-->
+        <div class="SX82">
+            <br>
+            <!--Este href direccionara al catalogo de carros en los que ira el index de la siguiente pagina-->
+            <a href="#" class="SX81">
+                <!--icono del span-->
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/hennessey-venom.png" alt="bg+">
+                Ver catálogo...
+            <!--Texto de vista al href-->
+            </a>
+        <!--cerramos este contenedor-->
+        </div>
+
+        <!--Hacemos espacio co br para la distancia este la descripcion y el footer-->
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Contenedor del Footer -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3> Visión </h3>
+                            <p>Ser el primer concesionario de la marca VOLVO en el país, líder en calidad, tecnología, infraestructura, capital humano, rentabilidad y solidez financiera.</p>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3> Misión </h3>
+                            <p>Cumplimos con los estándares de la marca, normas ambientales y del entorno social; trabajamos por el bienestar y crecimiento de nuestro talento humano, para lograr así la total satisfacción de nuestros clientes.</p>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3> Company RentCar </h3>
+                            <p>
+                                Ser una empresa líder en el sector automotriz con un alto compromiso en la mejora continua basada en la integridad y trabajo en equipo, garantizando la satisfacción de nuestros clientes, el bienestar de nuestros empleados y una rentabilidad sostenida para sus accionistas.
+                            </p>
+                        </div>
+                        <div class="col item social">
+                            <i class="bi bi-instagram"></i>
+                            <i class="bi bi-twitter"></i>
+                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-youtube"></i>
+                        </div>
+                    </div>
+                    <p class="copyright"> DERECHOS RESERVADOS ©2022 </p>
+                </div>
+            </footer>
+        </div>
+    <!--Fin del codigo-->
+    </body>
+</html>
