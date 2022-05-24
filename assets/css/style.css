@@ -6,15 +6,39 @@
   box-sizing: border-box;
 }
 
+/* Google Fonts para footer*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 1rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+/* Variables de colores  botones,spam,etc*/
+:root {
+  --main-color: #d90429;
+  --text-color: #020102;
+  --bg-color: #fff;
+}
+
 body {     /*BODY ES EL CUERPO DE LA PAGINA*/
   /*FONDO DE LA PAGINA Y FUENTE*/
     background-image: url(https://www.hdcarwallpapers.com/walls/honda_civic_sedan_2019_4k_2-HD.jpg);
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
+
 }
 
 table {        /*ESTILO DE LA TABLA 1 TIPO FOOTER*/
   background-color: #282d32;
+margin-left: auto;
+    margin-right: auto;
 }
+
 
 
 #btnSesion {       /*BOTON PARA INICIAR SESION*/
@@ -56,12 +80,62 @@ table {        /*ESTILO DE LA TABLA 1 TIPO FOOTER*/
     text-decoration: none;
 }
 
+          /*Atributos de quieres alquilar un auto*/
+.home  {
+  margin: auto;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+ 
+  background-position: center left;
+}
+.home-text {
+  padding-left: 10px;
+}
+.home-text h2 {
+  font-size: 2.2rem;
+    text-align: center;
+}
+.center{
+    text-align: center;
+}
+.home-text span {
+  color: var(--main-color);
+}
 
+.home-text .btn {
+  padding: 10px 22px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 400;
+  display:flow-root
+}
+
+.home-text .btn:hover {
+  background: #fd052f;
+}
+        /*FIN de atributos de quieres alquilar un auto*/
+        
 .SX82{           /*BOTON DE CLASS SPAN , VER MAS CARROS*/   /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
     color: #000;
     text-align: center;
 }
 
+/*Color de fondo para texto arriba de boton ver catalogo*/
+
+.description{
+    width: 79%;
+    background: rgba(0, 0, 0,.8);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description h1{
+    font-size: 22px;
+    color: red;
+    text-align: center;
+}
 .SX81 {
   padding: .6rem 1rem;
   border-radius: 4px;
@@ -75,93 +149,147 @@ table {        /*ESTILO DE LA TABLA 1 TIPO FOOTER*/
   background-image: linear-gradient(#f90 10%,#e76a00 100%);
   text-decoration: none;
 }
-
-.footer-dark {       /*COLOR Y ESTILO DE FOOTER*/   /* EL (.) LLAMA A UNA CLASE EN ESPECFICO*/
-  padding:50px 0;
-  color:#f0f9ff;
-  background-color:#282d32;
+        /*Contenedor de autos index*/
+.cars-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.footer-dark h3 {    /*TEXTO DE FOOTER Y ESTILO*/    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  margin-top:0;
-  margin-bottom:12px;
-  font-weight:bold;
-  font-size:16px;
+        /*Tamaño y posicion de cajas*/
+.cars-container .box {
+  flex: 1 1 17rem;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+  border-radius: 0.5rem;
+}
+        /*Tamaño y posicion de imagenes*/
+.cars-container .box img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 1rem;
+}        
+        /*nombre de autos*/
+.cars-container .box h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+        /*Precios de autos*/
+.cars-container .box span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: red;
+}
+        /*Descripciones*/
+.cars-container .box .bx {
+  color: black;
+  margin: 0.1rem 0;
+    
+}
+        /*Tamaño y color de botones*/
+.cars-container .box .btn {
+  max-width: 120px;
+    padding: 10px 22px;
+  background: red;
+  color: white;
+  font-weight: 400;
+    margin-top: 0.5rem
+}
+        /*Efecto hover para botones de autos*/
+.cars-container .box .btn:hover {
+  background: #F25555;
+}
+        /*ver detalles de las box*/
+.cars-container .box .details {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 1.8rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: blue;
+}
+        /*Efecto hover para ver detalles*/
+.cars-container .box .details:hover {
+  color: var(--main-color);
+  text-decoration: underline;
 }
 
-.footer-dark ul {      /*ESTILO DE LISTAS EN VIÑETAS EN EL FOOTER*/     /*TEXTO DE FOOTER Y ESTILO*/    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  padding:0;
-  list-style:none;
-  line-height:1.6;
-  font-size:14px;
-  margin-bottom:0;
+  
+
+
+        /* Fondo y color de texto */
+.footer {
+    
+  background: var(--text-color);
+  color: #f6f6f6;
+  border-top: 2px solid var(--main-color);
+}
+        /* Fondo y color de texto */
+.footer-container {
+    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+        /* texto badbunny posicion y color */
+.footer-container .logo {
+  color: var(--bg-color);
+  margin-bottom: 1rem;
+ text-align: center
+}
+        /* Posicion de items de footer(paginas,legal,contactanos)*/
+.footer-container .footer-box {
+  display: flex;
+  flex-direction: column;
+}
+       /* Iconos de redes sociales*/
+.social {
+  display: flex;
+  align-items: center;
+}
+.social a {
+  font-size: 24px;
+  color: var(--bg-color);
+  margin-right: 1rem;
+}
+.social a:hover {
+  color: var(--main-color);
+}
+    /*tamaño de letra, color y efecto hover*/
+.footer-box h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.footer-box a,
+.footer-box p {
+  color: #818181;
+  margin-bottom: 10px;
+}
+.footer-box a:hover {
+  color: var(--main-color);
+}
+        /* Fin del footer */
+.copyright {
+  padding: 20px;
+  text-align: center;
+  color: var(--bg-color);
+  background: var(--text-color);
 }
 
-.footer-dark ul a {    /*ESTILO DE LISTAS EN VIÑETAS EN EL FOOTER*/ /*TEXTO DE FOOTER Y ESTILO*/    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  color:inherit;
-  text-decoration:none;
-  opacity:0.6;
+.cars-container .box span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-color);
 }
-
-.footer-dark ul a:hover {    /*ESTILO DE LISTAS EN VIÑETAS EN EL FOOTER*/    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  opacity:0.8;
-}
-
-@media (max-width:767px) {       
-  .footer-dark .item:not(.social) {
-    text-align:center;
-    padding-bottom:20px;
-  }
-}
-
-.footer-dark .item.text {    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  margin-bottom:36px;
-}
-
-@media (max-width:767px) {
-  .footer-dark .item.text {
-    margin-bottom:0;
-  }
-}
-
-.footer-dark .item.text p {    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  opacity:0.6;
-  margin-bottom:0;
-}
-
-.footer-dark .item.social {      /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-  text-align:center;
-}
-
-@media (max-width:991px) {
-  .footer-dark .item.social {       /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
-    text-align:center;
-    margin-top:20px;
-  }
-}
-
-.footer-dark .item.social > a {            /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/  /*COLOR DE FOOTER EN TEXTO Y FONDO*/
-  font-size:20px;
-  width:36px;
-  height:36px;
-  line-height:36px;
-  display:inline-block;
-  text-align:center;
-  border-radius:50%;
-  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-  margin:0 8px;
-  color:#fff;
-  opacity:0.75;
-}
-
-.footer-dark .item.social > a:hover {     /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/ /*Y OCAPACIDAD DEL FOOTER*/
-  opacity:0.9;
-}
-
-.footer-dark .copyright {    /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/  /*CORYRIGHT DE DERECHOS RESERVADOS*/
-  text-align:center;
-  padding-top:24px;
-  opacity:0.3;
-  font-size:13px;
-  margin-bottom:0;
+.cars-container .box .bx {
+  color: var(--main-color);
+  margin: 0.8rem 0;
 }
