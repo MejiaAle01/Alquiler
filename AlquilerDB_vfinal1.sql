@@ -177,3 +177,13 @@ ALTER TABLE `usuarios`
 ALTER TABLE `motoristas`
   ADD CONSTRAINT `FK_Motoristas_Alquiler` FOREIGN KEY (`ID_MOT`) REFERENCES `alquiler` (`MOT_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido`, `Usuario`, `Contraseña`, `Correo`, `T_user`) VALUES
+(1, 'Alejandro', 'Mejia', 'JAMejia', '$2y$10$tFZS8AWDj9lGjh0/h8DNoeHR.L2KmQgVP37KH6qBFF.crGUq7jXeS', 'jAmejia@hotmail.com', 'Administrador'),
+(14, 'Jose Alejandro', 'Mejia Ceron', 'JAMC01', '$2y$10$nt6TOFjUoSA.lVV3N9Ez5OKPM4Jt64pISeJkubmiBiXjvLL9zY8Ry', 'jamc00@hotmail.com', 'Usuario'),
+(16, 'Sarai', 'Hernandez', 'stefy.h09', '$2y$10$ZWvh.eQ0ZzkFNTxxVoZo0OBRjsg4YsQZ78cepsBAdiChnqkReRfHK', 'sarai@gmail.com', 'Empleado'),
+(17, 'Stefany', 'Aguilar', 'sarai', '$2y$10$zusQBo/clLcgm4Etj3al7eB4ko1cAURX3LMCyfxVRsDQthnes9Ufu', 'sarai@hotmail.com', 'Usuario');
