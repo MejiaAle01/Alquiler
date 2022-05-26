@@ -81,7 +81,6 @@
 						<th scope="col"> # </th>
 						<th scope="col"> Proveedor </th>
 						<th scope="col"> Marca </th>
-						<th scope="col"> Modelo </th>
 						<th scope="col"> Cantidad </th>
 						<th scope="col"> Año </th>
 						<th scope="col"> Placas </th>
@@ -98,7 +97,6 @@
 							$idProv = $fila['ID'];
 							$prov = $fila['Proveedor'];
 							$mark = $fila['Marca'];
-							$model = $fila['Modelo'];
 							$cant = $fila['CantCar'];
 							$year = $fila['Año'];
 							$placas = $fila['Placas'];
@@ -112,14 +110,13 @@
 						<th scope="row"><?php echo $idProv; ?></th>
 						<td><?php echo $prov; ?></td>
 						<td><?php echo $mark; ?></td>
-						<td><?php echo $model; ?></td>
 						<td><?php echo $cant; ?></td>
 						<td><?php echo $year; ?></td>
 						<td><?php echo $placas; ?></td>
 						<td><?php echo $poli; ?></td>
 						<td>
-							<a href="#"><i class="bi-pencil-square" style="font-size: 1.5rem;"></i></a>
-							<a href="#"><i class="bi-person-x" style="font-size: 1.5rem;"></i></a>
+							<a href="editProvE.php?id=<?php echo $idProv; ?>"><i class="bi-pencil-square" style="font-size: 1.5rem;"></i></a>
+							<a href="delProvE.php?id=<?php echo $idProv;?>"><i class="bi-person-x" style="font-size: 1.5rem;"></i></a>
 						</td>
 					</tr>
 					<?php } ?>
@@ -132,49 +129,44 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel"> Crear usuario </h5>
+						<h5 class="modal-title" id="exampleModalLabel"> Nuevo proveedor </h5>
 					</div>
 					<article class="modal-body">
-						<form autocomplete="off" method="POST" action="cruA.php">
+						<form autocomplete="off" method="POST" action="cprovE.php">
 							<div class="row mb-2">
-								<label for="nombre" class="col-sm-5 col-form-label"> Ingrese el nombre: </label>
+								<label for="nameProv" class="col-sm-5 col-form-label"> Ingrese el proveedor: </label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" name="nombre" id="nombre" required>
+									<input type="text" class="form-control" name="nameProv" required>
 								</div>
 							</div>
 							<div class="row mb-2">
-								<label for="apellidos" class="col-sm-5 col-form-label"> Ingrese el apellido: </label>
+								<label for="markProv" class="col-sm-5 col-form-label"> Ingrese la marca: </label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" name="apellido" id="apellido" required>
+									<input type="text" class="form-control" name="markProv" required>
 								</div>
 							</div>
 							<div class="row mb-2">
-								<label for="usuario" class="col-sm-5 col-form-label"> Ingrese el usuario: </label>
+								<label for="cantCProv" class="col-sm-5 col-form-label"> Ingrese la cantidad: </label>
 								<div class="col-sm-6">
-									<input type="text" class="form-control" name="usuario" id="usuario" required>
+									<input type="number" class="form-control" name="cantCProv" required>
 								</div>
 							</div>
 							<div class="row mb-2">
-								<label for="password" class="col-sm-5 col-form-label"> Ingrese la contraseña: </label>
+								<label for="yearprov" class="col-sm-5 col-form-label"> Ingrese el año: </label>
 								<div class="col-sm-6">
-									<input type="password" class="form-control" name="contra" id="contra" required>
+									<input type="number" class="form-control" name="yearCProv" required>
 								</div>
 							</div>
 							<div class="row mb-2">
-								<label for="email" class="col-sm-5 col-form-label"> Ingrese el correo: </label>
+								<label for="placasCProv" class="col-sm-5 col-form-label"> Ingrese las placas: </label>
 								<div class="col-sm-6">
-									<input type="email" class="form-control" name="correo" id="correo" required>
+									<input type="text" class="form-control" name="placasCProv" required>
 								</div>
 							</div>
 							<div class="row mb-2">
-								<label for="rol" class="col-sm-5 col-form-label"> Seleccione el rol: </label>
+								<label for="polizaCProv" class="col-sm-5 col-form-label"> Ingrese la aseguradora: </label>
 								<div class="col-sm-6">
-									<select class="form-select" name="tipousuario" aria-label="Seleccion de roles">
-										<option selected> Seleccione el rol </option>
-										<option value="Administrador"> Administrador </option>
-										<option value="Empleado"> Empleado </option>
-										<option value="Usuario"> Usuario </option>
-									</select>
+									<input type="text" class="form-control" name="polizaCProv" required>
 								</div>
 							</div>
 							<div class="d-flex justify-content-center">

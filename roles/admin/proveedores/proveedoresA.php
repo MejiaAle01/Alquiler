@@ -5,7 +5,7 @@
 	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
 	// Preparamos una sentencia a la BD
-	$cons = "SELECT * FROM usuarios";
+	$cons = "SELECT * FROM proveedores";
 
 	// Ejecutamos la conexion y sentencia
 	$res = mysqli_query($conn, $cons);
@@ -74,15 +74,17 @@
 
 		<!---->
 		<section class="container-fluid table-responsive mt-3">
+			<button type="button" class="btn btn-outline-dark m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-person-bounding-box"></i> Nuevo proveedor </button>
 			<table class="table table-bordered table-hover table-striped">
 				<thead class="table-light">
 					<tr>
 						<th scope="col"> # </th>
 						<th scope="col"> Proveedor </th>
 						<th scope="col"> Marca </th>
-						<th scope="col"> Cantidad</th>
-						<th scope="col"> Precio </th>
-						<th scope="col"> Poliza</th>
+						<th scope="col"> Cantidad </th>
+						<th scope="col"> Año </th>
+						<th scope="col"> Placas </th>
+						<th scope="col"> Poliza </th>
 						<th scope="col"> Opciones </th>
 					</tr>
 				</thead>
@@ -92,24 +94,26 @@
 						$i = 0;
 						//Iniciamos la condicion while que obtendra todos los datos de la BD
 						while ($fila = mysqli_fetch_assoc($res)) {
-							$idU = $fila['ID'];
-							$name = $fila['Nombre'];
-							$ape = $fila['Apellido'];
-							$user = $fila['Usuario'];
-							$email = $fila['Correo'];
-							$rol = $fila['T_user'];
+							$idProv = $fila['ID'];
+							$prov = $fila['Proveedor'];
+							$mark = $fila['Marca'];
+							$cant = $fila['CantCar'];
+							$year = $fila['Año'];
+							$placas = $fila['Placas'];
+							$poli = $fila['Poliza'];
 
 							//Sumamos todo los datos obtenidos
 							$i++;
 					?>
 					<tr>
 						<!-- Mostramos los resultados obtenidos de la BD en la tabla -->
-						<th scope="row"><?php echo $idU; ?></th>
-						<td><?php echo $name; ?></td>
-						<td><?php echo $ape; ?></td>
-						<td><?php echo $user; ?></td>
-						<td><?php echo $email; ?></td>
-						<td><?php echo $rol; ?></td>
+						<th scope="row"><?php echo $idProv; ?></th>
+						<td><?php echo $prov; ?></td>
+						<td><?php echo $mark; ?></td>
+						<td><?php echo $cant; ?></td>
+						<td><?php echo $year; ?></td>
+						<td><?php echo $placas; ?></td>
+						<td><?php echo $poli; ?></td>
 						<td>
 							<a href="#"><i class="bi-pencil-square" style="font-size: 1.5rem;"></i></a>
 							<a href="#"><i class="bi-person-x" style="font-size: 1.5rem;"></i></a>
@@ -118,6 +122,61 @@
 					<?php } ?>
 				</tbody>
 			</table>
+		</section>
+
+		<!-- Modal -->
+		<section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel"> Nuevo proveedor </h5>
+					</div>
+					<article class="modal-body">
+						<form autocomplete="off" method="POST" action="cprovA.php">
+							<div class="row mb-2">
+								<label for="nameProv" class="col-sm-5 col-form-label"> Ingrese el proveedor: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="nameProv" required>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<label for="markProv" class="col-sm-5 col-form-label"> Ingrese la marca: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="markProv" required>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<label for="cantCProv" class="col-sm-5 col-form-label"> Ingrese la cantidad: </label>
+								<div class="col-sm-6">
+									<input type="number" class="form-control" name="cantCProv" required>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<label for="yearprov" class="col-sm-5 col-form-label"> Ingrese el año: </label>
+								<div class="col-sm-6">
+									<input type="number" class="form-control" name="yearCProv" required>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<label for="placasCProv" class="col-sm-5 col-form-label"> Ingrese las placas: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="placasCProv" required>
+								</div>
+							</div>
+							<div class="row mb-2">
+								<label for="polizaCProv" class="col-sm-5 col-form-label"> Ingrese la aseguradora: </label>
+								<div class="col-sm-6">
+									<input type="text" class="form-control" name="polizaCProv" required>
+								</div>
+							</div>
+							<div class="d-flex justify-content-center">
+								<input type="submit" class="btn btn-outline-primary" value="Registrarse" role="button">
+								<button type="button" class="btn btn-outline-secondary ms-2" data-bs-dismiss="modal"> Cerrar </button>
+							</div>
+						</form>
+					</article>
+				</div>
+			</div>
 		</section>
 	</main>
 
