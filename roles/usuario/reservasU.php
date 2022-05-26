@@ -86,8 +86,8 @@
 						<th scope="col"> Residencia </th>
 						<th scope="col"> Retiro </th>
 						<th scope="col"> Devolución </th>
-						<th scope="col"> # Motorista </th>
 						<th scope="col"> Nombre Motorista </th>
+						<th scope="col"> Disponibilidad </th>
 						<th scope="col"> Total a pagar </th>
 						<th scope="col"> Estado </th>
 						<th scope="col"> Opciones </th>
@@ -108,8 +108,8 @@
 							$resAlq = $fila['Residencia'];
 							$f_retiroAlq = $fila['Fecha_ret'];
 							$f_devAlq = $fila['Fecha_dev'];
-							$idAlqMot = $fila['ID_MOT'];
 							$nameAlqMot = $fila['Nombre_mot'];
+							$disAlq = $fila['Disponibilidad'];
 							$pagoAlq = $fila['Total_pago'];
 							$stateAlq = $fila['Estado'];
 
@@ -127,9 +127,9 @@
 						<td><?php echo $resAlq; ?></td>
 						<td><?php echo $f_retiroAlq; ?></td>
 						<td><?php echo $f_devAlq; ?></td>
-						<td><?php echo $idAlqMot; ?></td>
 						<td><?php echo $nameAlqMot; ?></td>
-						<td> $ <?php echo $pagoAlq; ?></td>
+						<td><?php echo $disAlq; ?></td>
+						<td><?php echo '$'.$pagoAlq; ?></td>
 						<td><?php echo $stateAlq; ?></td>
 						<td>
 							<a href="#"><i class="bi bi-check2-square" style="font-size: 1.5rem; color: green;"></i></a>

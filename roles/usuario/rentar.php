@@ -3,20 +3,21 @@
 	session_start();
 
 	// Conexion a la base de datos
-	//$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
+	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
-	/*if (isset($_REQUEST['car'])) {
+	if (isset($_REQUEST['car'])) {
 		$carselect = $_REQUEST['car'];
 
-		//DATOS DE LOS CARROS DE LA BD
-	}*/
+		//DATOS DE LOS CARROS DESDE LA BD
+		$cons = "SELECT Marca FROM proveedores WHERE Marca = '$carselect'";
 
+		// Iniciamos una consulta a la base de datos
+		$exec = mysqli_query($conn, $cons);
 
-	// Consultamos la base de datos
-	//$cons = "SELECT * FROM alquiler";
+		$fila = mysqli_fetch_assoc($exec);
 
-	// Iniciamos una consulta a la base de datos
-	//$res = mysqli_query($conn, $cons);
+		$marcaCar = $fila['Marca'];
+	}
 ?>
 
 <!DOCTYPE html>
@@ -75,9 +76,9 @@
 						<h4 class="mb-3 mt-2 text-center"> Información personal </h4>
 						<div class="row mb-3">
 							<!-- AQUI IRA EL NOMBRE DEL USUARIO TRAIDO DE LA BD -->
-							<label for="Nombre" class="col-sm-5 col-form-label"> Carro seleccionado: </label>
+							<label for="SelectedCar" class="col-sm-5 col-form-label"> Carro seleccionado: </label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" name="carselect" required>
+								<input type="text" class="form-control" name="carselect" required value="<?php echo $marcaCar; ?>" disabled>
 							</div>
 						</div>
 						<div class="row mb-3">
@@ -128,16 +129,16 @@
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="FechaDevol" class="col-sm-5 col-form-label"> Fecha de devolución: </label>
-							<div class="col-sm-6">
-								<input type="checkbox" value="Si" class="form-check-input" name="opsi">
-								<label for="OpSi" class="form-check-label"> Si </label>
-								<input type="checkbox" value="No" class="form-check-input ms-2" name="opno">
-								<label for="OpNo" class="form-check-label"> No </label>
+							<label for="Entrega" class="col-sm-8 col-form-label"> ¿Dónde quiere que este disponible? </label>
+							<div class="col-sm-3">
+								<input type="checkbox" value="Domicilio" class="form-check-input" name="opdom" onclick="mostrarMot();">
+								<label for="OpDom" class="form-check-label"> Domicilio </label>
+								<input type="checkbox" value="Empresa" class="form-check-input ms-2" name="opemp">
+								<label for="OpEmp" class="form-check-label"> Empresa </label>
 							</div>
 						</div>
-						<div class="row mb-3">
-							<label for="Motorista" class="col-sm-5 col-form-label"> Motorista: </label>
+						<div class="row mb-3 mostrarM" id="mot">
+							<label for="Motorista" class="col-sm-5 col-form-label"> Seleccione un motorista: </label>
 							<div class="input-group w-50">
 								<span class="input-group-text"><i class="bi-person-bounding-box"></i></span>
 								<select name="motoristas" class="form-select">
@@ -149,7 +150,7 @@
 						<!-- Boton que llamara al Modal -->
 						<div class="d-flex justify-content-center">
 							<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-credit-card"></i> Agregar tarjeta de crédito </button>
-							<input type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button">
+							<button type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button"><i class="bi bi-clipboard-check"></i> Reservar </button>
 						</div>
 					</form>
 				</div>
@@ -215,7 +216,18 @@
 			background-attachment: fixed;
 			background-repeat: no-repeat;
 		}
+
+		.mostrarM {
+			display: none;
+		}
+
 	</style>
+
+	<script>
+		function mostrarMot() {
+			document.getElementById('mot').style.display = 'block';
+		}
+	</script>
 
 	<!-- Enlace a las librerias de JavaScript de Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

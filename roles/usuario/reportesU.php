@@ -35,8 +35,9 @@
 				<th> Residencia </th>
 				<th> Retiro </th>
 				<th> Devolución </th>
-				<th> # Motorista </th>
 				<th> Nombre motorista </th>
+				<th> Disponibilidad </th>
+				<th> Total a pagar </th>
 			</tr>
 		</thead>
 		<tbody>
@@ -54,8 +55,9 @@
 					$resAlq = $fila['Residencia'];
 					$f_retiroAlq = $fila['Fecha_ret'];
 					$f_devAlq = $fila['Fecha_dev'];
-					$idAlqMot = $fila['ID_MOT'];
 					$nameAlqMot = $fila['Nombre_mot'];
+					$disAlq = $fila['Disponibilidad'];
+					$pagoAlq = $fila['Total_pago'];
 
 					//Sumamos todo los datos obtenidos
 				$i++;
@@ -71,8 +73,9 @@
 				<td><?php echo $resAlq; ?></td>
 				<td><?php echo $f_retiroAlq; ?></td>
 				<td><?php echo $f_devAlq; ?></td>
-				<td><?php echo $idAlqMot; ?></td>
 				<td><?php echo $nameAlqMot; ?></td>
+				<td><?php echo $disAlq; ?></td>
+				<td><?php echo '$'.$pagoAlq; ?></td>
 			</tr>
 			<?php } ?>
 		</tbody>
