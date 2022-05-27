@@ -187,3 +187,20 @@ INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido`, `Usuario`, `Contraseña`, `C
 (14, 'Jose Alejandro', 'Mejia Ceron', 'JAMC01', '$2y$10$nt6TOFjUoSA.lVV3N9Ez5OKPM4Jt64pISeJkubmiBiXjvLL9zY8Ry', 'jamc00@hotmail.com', 'Usuario'),
 (16, 'Sarai', 'Hernandez', 'stefy.h09', '$2y$10$ZWvh.eQ0ZzkFNTxxVoZo0OBRjsg4YsQZ78cepsBAdiChnqkReRfHK', 'sarai@gmail.com', 'Empleado'),
 (17, 'Stefany', 'Aguilar', 'sarai', '$2y$10$zusQBo/clLcgm4Etj3al7eB4ko1cAURX3LMCyfxVRsDQthnes9Ufu', 'sarai@hotmail.com', 'Usuario');
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`ID`, `Proveedor`, `Marca`, `CantCar`, `Año`, `Placas`, `Poliza`) VALUES
+(1, 'Super Repuestos S.A de C.V', 'Nissan Sentra', 15, 2019, 'P124567', 'ASESUISA S.A DE C.V'),
+(2, 'Excel Automotriz S.A de C.V', 'Toyota Corolla', 10, 2019, 'P796094', 'ASESUISA S.A DE C.V'),
+(3, 'Econoparts S.A de C.V', 'Kia Soul', 5, 2021, 'P703456', 'SEGUROS DEL PACIFICO S.A DE C.V'),
+(4, 'Excel Automotriz S.A de C.V', 'Hyundai Accent', 10, 2019, 'P796094', 'SEGUROS AZUL S.A DE C.V'),
+(5, 'Super Repuestos S.A de C.V', 'Toyota Hilux', 15, 2018, 'P258741', 'SEGUROS FUTURO S.A DE C.V'),
+(6, 'Impresa Repuestos S.A de C.V', 'Toyota Prado', 10, 2021, 'P746123', 'ASSA S.A DE C.V'),
+(7, 'Grupo Q', 'BMW Series 3', 14, 2022, 'P487569', 'SEGUROS FUTURO S.A DE C.V'),
+(8, 'Econoparts S.A DE C.V', 'Chevrolet Camaro', 30, 2017, 'P257891', 'SEGUROS AZUL S.A DE C.V'),
+(9, 'Excel Automotriz S.A DE C.V', 'Ford Mustang', 15, 2021, 'P017895', 'SEGUROS DEL PACIFICO S.A DE C.V'),
+(10, 'Super Repuestos S.A DE C.V', 'Masserati', 25, 2022, 'P027894', 'ASESUISA S.A DE C.V'),
+(11, 'Grupo Q', 'Chevrolet Spark GT', 30, 2021, 'P052746', 'SEGUROS AZUL S.A DE C.V');
