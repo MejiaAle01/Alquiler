@@ -65,16 +65,12 @@
 			<a href="index_admin.php" class="btn btn-outline-dark m-1" role="button"><i class="bi-chevron-compact-left"></i></a>
 			<div class="d-flex" aria-label="Encabezado con buscador">
 				<h4 class="mb-0"> Lista de usuarios </h4>
-				<form class="d-flex ms-auto">
-					<label for="search" class="col-form-label me-2"> Buscar: </label>
-					<input class="form-control form-control-sm search" id="buscar" type="search" aria-label="Search">
-				</form>
 			</div>
 		</section>
 
 		<!-- Boton que hara de funcion modal -->
 		<section class="container-fluid">
-			<button type="button" class="btn btn-outline-dark m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-person-plus"></i> Crear usuario </button>
+			<button type="button" class="btn btn-outline-dark m-1" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-person-plus"></i> Nuevo usuario </button>
 			<article class="table-responsive">
 				<table class="table table-bordered table-hover table-striped">
 					<thead class="table-light">

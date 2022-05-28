@@ -16,7 +16,7 @@
 				'<script>
 					confirm("¿Desea eliminar los datos?");
 					console.log("Datos eliminados correctamente!");
-					window.location.href = "proveedoresE.php";
+					window.location.href = "proveedoresA.php";
 				</script>'
 			;
 		}

@@ -5,10 +5,10 @@
 
 	// Comparamos el id que se presiono con el requerido
 	if (isset($_REQUEST['id'])) {
-		$delIDP = $_REQUEST['id'];
+		$delIDM = $_REQUEST['id'];
 
 		// Ejecutamos la consulta junto con la conexion
-		$exec = mysqli_query($conn, "DELETE FROM proveedores WHERE ID = '$delIDP'");
+		$exec = mysqli_query($conn, "DELETE FROM motoristas WHERE ID_MOT = '$delIDM'");
 
 		// Mostramos un mensaje de confirmacion
 		if ($exec) {
@@ -16,7 +16,7 @@
 				'<script>
 					confirm("¿Desea eliminar los datos?");
 					console.log("Datos eliminados correctamente!");
-					window.location.href = "proveedoresE.php";
+					window.location.href = "motoristasA.php";
 				</script>'
 			;
 		}

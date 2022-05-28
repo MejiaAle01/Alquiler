@@ -72,7 +72,7 @@
 			<div class="row row-cols-1 row-cols-sm-3 g-3">
 				<div class="col">
 					<div class="card border-dark bg-transparent">
-						<a class="btn btn-outline-light fs-4 fw-bold text-dark" href="historial/registrosE.php">
+						<a class="btn btn-outline-light fs-4 fw-bold text-dark" href="historial/reservasE.php">
 							<i class="bi-book" style="font-size: 8rem;">
 								<br>
 							</i>
@@ -87,6 +87,16 @@
 								<br>
 							</i>
 							Proveedores
+						</a>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card border-dark bg-transparent">
+						<a class="btn btn-outline-light fs-4 fw-bold text-dark" href="motoristas/motoristasE.php">
+							<i class="bi-file-earmark-person" style="font-size: 8rem;">
+								<br>
+							</i>
+							Motoristas
 						</a>
 					</div>
 				</div>

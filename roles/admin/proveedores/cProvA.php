@@ -1,4 +1,5 @@
 <?php
+
 	// Conexion a la BD
 	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
@@ -10,11 +11,11 @@
 	$placasCPA = $_POST['placasCProv'];
 	$polizaCPA = $_POST['polizaCProv'];
 
-	// Ejecutamos el query con los datos a ingresar, junto con la conexion
-	$exec = mysqli_query($conn, "INSERT INTO proveedores (Proveedor, Marca, CantCar, Año, Placas, Poliza) VALUES ('$namePA','$markPA','$cantCPA','$yearCPA','$placasCPA','$polizaCPA')");
+	// Ingresamos los datos junto con la conexion
+	$ins = mysqli_query($conn, "INSERT INTO proveedores (Proveedor, Marca, CantCar, Año, Placas, Poliza) VALUES ('$namePA','$markPA','$cantCPA','$yearCPA','$placasCPA','$polizaCPA')");
 
 	//Comparamos el ingreso de los datos
-	if (!$exec) {
+	if (!$ins) {
 		// En caso de dar error
 		echo
 			'<script>
@@ -27,11 +28,12 @@
 		echo 
 			'<script>
 				alert("Datos registrados correctamente!");
-				window.location.href = "proveedoresE.php";
+				window.location.href = "proveedoresA.php";
 			</script>'
 		;
 	}
 
 	//Cerramos la conexion
 	mysqli_close($conn);
+
 ?>

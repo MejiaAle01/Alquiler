@@ -1,9 +1,9 @@
--- phpMyAdmin SQL Dump
+- phpMyAdmin SQL Dump
 -- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-05-2022 a las 04:21:59
+-- Tiempo de generación: 28-05-2022 a las 22:46:00
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.5
 
@@ -31,13 +31,21 @@ CREATE TABLE `alquiler` (
   `Tel` int(11) NOT NULL,
   `TipoCar` varchar(15) NOT NULL,
   `Residencia` varchar(100) NOT NULL,
-  `Fecha_ret` date NOT NULL,
-  `Fecha_dev` date NOT NULL,
-  `MOT_ID` int(11) NOT NULL,
+  `Fecha_ret` datetime NOT NULL,
+  `Fecha_dev` datetime NOT NULL,
+  `Name_mot` varchar(40) NOT NULL,
   `Estado` varchar(10) NOT NULL,
-  `Disponibilidad` varchar(10) NOT NULL,
+  `Entrega` varchar(10) NOT NULL,
   `Total_pago` decimal(6,2) NOT NULL COMMENT 'En $'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `alquiler`
+--
+
+INSERT INTO `alquiler` (`ID`, `Marca`, `Fullname`, `CantCar`, `Tel`, `TipoCar`, `Residencia`, `Fecha_ret`, `Fecha_dev`, `Name_mot`, `Estado`, `Entrega`, `Total_pago`) VALUES
+(1, 'Mitsubishi Lancer', 'Shimazaki Nobunaga', 8, 71150616, 'Estandar', 'Tokio, Japon', '2022-04-01 11:00:00', '2022-05-28 11:30:00', 'Yoshida Matsuoka', 'Pendiente', 'Domicilio', '250.00'),
+(2, '', 'Jose Alejandro Mejia Ceron', 5, 71150616, 'Estandar', 'Urb. Sierra Morena', '2022-04-01 10:00:00', '2022-05-01 16:00:00', 'Jose Efrain Mejia', '', 'Domicilio', '0.00');
 
 -- --------------------------------------------------------
 
@@ -47,8 +55,20 @@ CREATE TABLE `alquiler` (
 
 CREATE TABLE `motoristas` (
   `ID_MOT` int(11) NOT NULL,
-  `Nombre_mot` varchar(40) NOT NULL
+  `Nombre_mot` varchar(40) NOT NULL,
+  `Edad` int(11) NOT NULL,
+  `Telefono` int(11) NOT NULL,
+  `Horario` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `motoristas`
+--
+
+INSERT INTO `motoristas` (`ID_MOT`, `Nombre_mot`, `Edad`, `Telefono`, `Horario`) VALUES
+(1, 'Yoshida Matsuoka', 38, 1234567, 'De 10:00 AM A 01:00 PM'),
+(2, 'Shimazaki Nobunaga', 33, 72134059, 'De: 09:00 AM A 03:00 PM'),
+(3, 'Jose Efrain Mejia', 52, 70189930, 'De 10:00 AM A 01:00 PM');
 
 -- --------------------------------------------------------
 
@@ -65,6 +85,24 @@ CREATE TABLE `proveedores` (
   `Placas` varchar(20) NOT NULL,
   `Poliza` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `proveedores`
+--
+
+INSERT INTO `proveedores` (`ID`, `Proveedor`, `Marca`, `CantCar`, `Año`, `Placas`, `Poliza`) VALUES
+(1, 'Super Repuestos S.A de C.V', 'Nissan Sentra', 15, 2019, 'P124567', 'ASESUISA S.A DE C.V'),
+(2, 'Excel Automotriz S.A de C.V', 'Toyota Corolla', 10, 2019, 'P796094', 'ASESUISA S.A DE C.V'),
+(3, 'Econoparts S.A de C.V', 'Kia Soul', 5, 2021, 'P703456', 'SEGUROS DEL PACIFICO S.A DE C.V'),
+(4, 'Excel Automotriz S.A de C.V', 'Hyundai Accent', 10, 2019, 'P796094', 'SEGUROS AZUL S.A DE C.V'),
+(5, 'Super Repuestos S.A de C.V', 'Toyota Hilux', 15, 2018, 'P258741', 'SEGUROS FUTURO S.A DE C.V'),
+(6, 'Impresa Repuestos S.A de C.V', 'Toyota Prado', 10, 2021, 'P746123', 'ASSA S.A DE C.V'),
+(7, 'Grupo Q', 'BMW Series 3', 14, 2022, 'P487569', 'SEGUROS FUTURO S.A DE C.V'),
+(8, 'Econoparts S.A DE C.V', 'Chevrolet Camaro', 30, 2017, 'P257891', 'SEGUROS AZUL S.A DE C.V'),
+(9, 'Excel Automotriz S.A DE C.V', 'Ford Mustang', 15, 2021, 'P017895', 'SEGUROS DEL PACIFICO S.A DE C.V'),
+(10, 'Super Repuestos S.A DE C.V', 'Masserati', 25, 2022, 'P027894', 'ASESUISA S.A DE C.V'),
+(11, 'Grupo Q', 'Chevrolet Spark GT', 30, 2021, 'P052746', 'SEGUROS AZUL S.A DE C.V'),
+(14, 'Econoparts S.A de C.V', 'Mitsubishi Lancer', 8, 2021, 'P014378', 'SEGUROS DEL PACIFICO S.A DE C.V');
 
 -- --------------------------------------------------------
 
@@ -97,6 +135,15 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido`, `Usuario`, `Contraseña`, `Correo`, `T_user`) VALUES
+(1, 'Alejandro', 'Mejia', 'JAMejia', '$2y$10$tFZS8AWDj9lGjh0/h8DNoeHR.L2KmQgVP37KH6qBFF.crGUq7jXeS', 'jAmejia@hotmail.com', 'Administrador'),
+(14, 'Jose Alejandro', 'Mejia Ceron', 'JAMC01', '$2y$10$nt6TOFjUoSA.lVV3N9Ez5OKPM4Jt64pISeJkubmiBiXjvLL9zY8Ry', 'jamc00@hotmail.com', 'Usuario'),
+(16, 'Sarai', 'Hernandez', 'stefy.h09', '$2y$10$ZWvh.eQ0ZzkFNTxxVoZo0OBRjsg4YsQZ78cepsBAdiChnqkReRfHK', 'sarai@gmail.com', 'Empleado');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -105,13 +152,14 @@ CREATE TABLE `usuarios` (
 --
 ALTER TABLE `alquiler`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `FK_Motoristas_Alquiler` (`MOT_ID`) USING BTREE;
+  ADD UNIQUE KEY `Name_mot` (`Name_mot`);
 
 --
 -- Indices de la tabla `motoristas`
 --
 ALTER TABLE `motoristas`
-  ADD PRIMARY KEY (`ID_MOT`);
+  ADD PRIMARY KEY (`ID_MOT`),
+  ADD UNIQUE KEY `Nombre_mot` (`Nombre_mot`);
 
 --
 -- Indices de la tabla `proveedores`
@@ -141,19 +189,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `alquiler`
 --
 ALTER TABLE `alquiler`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `motoristas`
 --
 ALTER TABLE `motoristas`
-  MODIFY `ID_MOT` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_MOT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tarjetas`
@@ -165,42 +213,16 @@ ALTER TABLE `tarjetas`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `motoristas`
+-- Filtros para la tabla `alquiler`
 --
-ALTER TABLE `motoristas`
-  ADD CONSTRAINT `FK_Motoristas_Alquiler` FOREIGN KEY (`ID_MOT`) REFERENCES `alquiler` (`MOT_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `alquiler`
+  ADD CONSTRAINT `FK_Alquiler_Motoristas` FOREIGN KEY (`Name_mot`) REFERENCES `motoristas` (`Nombre_mot`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`ID`, `Nombre`, `Apellido`, `Usuario`, `Contraseña`, `Correo`, `T_user`) VALUES
-(1, 'Alejandro', 'Mejia', 'JAMejia', '$2y$10$tFZS8AWDj9lGjh0/h8DNoeHR.L2KmQgVP37KH6qBFF.crGUq7jXeS', 'jAmejia@hotmail.com', 'Administrador'),
-(14, 'Jose Alejandro', 'Mejia Ceron', 'JAMC01', '$2y$10$nt6TOFjUoSA.lVV3N9Ez5OKPM4Jt64pISeJkubmiBiXjvLL9zY8Ry', 'jamc00@hotmail.com', 'Usuario'),
-(16, 'Sarai', 'Hernandez', 'stefy.h09', '$2y$10$ZWvh.eQ0ZzkFNTxxVoZo0OBRjsg4YsQZ78cepsBAdiChnqkReRfHK', 'sarai@gmail.com', 'Empleado'),
-(17, 'Stefany', 'Aguilar', 'sarai', '$2y$10$zusQBo/clLcgm4Etj3al7eB4ko1cAURX3LMCyfxVRsDQthnes9Ufu', 'sarai@hotmail.com', 'Usuario');
-
---
--- Volcado de datos para la tabla `proveedores`
---
-
-INSERT INTO `proveedores` (`ID`, `Proveedor`, `Marca`, `CantCar`, `Año`, `Placas`, `Poliza`) VALUES
-(1, 'Super Repuestos S.A de C.V', 'Nissan Sentra', 15, 2019, 'P124567', 'ASESUISA S.A DE C.V'),
-(2, 'Excel Automotriz S.A de C.V', 'Toyota Corolla', 10, 2019, 'P796094', 'ASESUISA S.A DE C.V'),
-(3, 'Econoparts S.A de C.V', 'Kia Soul', 5, 2021, 'P703456', 'SEGUROS DEL PACIFICO S.A DE C.V'),
-(4, 'Excel Automotriz S.A de C.V', 'Hyundai Accent', 10, 2019, 'P796094', 'SEGUROS AZUL S.A DE C.V'),
-(5, 'Super Repuestos S.A de C.V', 'Toyota Hilux', 15, 2018, 'P258741', 'SEGUROS FUTURO S.A DE C.V'),
-(6, 'Impresa Repuestos S.A de C.V', 'Toyota Prado', 10, 2021, 'P746123', 'ASSA S.A DE C.V'),
-(7, 'Grupo Q', 'BMW Series 3', 14, 2022, 'P487569', 'SEGUROS FUTURO S.A DE C.V'),
-(8, 'Econoparts S.A DE C.V', 'Chevrolet Camaro', 30, 2017, 'P257891', 'SEGUROS AZUL S.A DE C.V'),
-(9, 'Excel Automotriz S.A DE C.V', 'Ford Mustang', 15, 2021, 'P017895', 'SEGUROS DEL PACIFICO S.A DE C.V'),
-(10, 'Super Repuestos S.A DE C.V', 'Masserati', 25, 2022, 'P027894', 'ASESUISA S.A DE C.V'),
-(11, 'Grupo Q', 'Chevrolet Spark GT', 30, 2021, 'P052746', 'SEGUROS AZUL S.A DE C.V');

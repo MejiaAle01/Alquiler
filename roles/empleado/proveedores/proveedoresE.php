@@ -65,10 +65,6 @@
 			<a href="../index_empleados.php" class="btn btn-outline-dark m-1" role="button"><i class="bi-chevron-compact-left"></i></a>
 			<div class="d-flex" aria-label="Encabezado con buscador">
 				<h4 class="mb-0"> Listado de proveedores </h4>
-				<form class="d-flex ms-auto">
-					<label for="search" class="col-form-label me-2"> Buscar: </label>
-					<input class="form-control form-control-sm search" id="buscar" type="search" aria-label="Search">
-				</form>
 			</div>
 		</article>
 
@@ -116,7 +112,7 @@
 						<td><?php echo $poli; ?></td>
 						<td>
 							<a href="editProvE.php?id=<?php echo $idProv; ?>"><i class="bi-pencil-square" style="font-size: 1.5rem;"></i></a>
-							<a href="delProvE.php?id=<?php echo $idProv;?>"><i class="bi-person-x" style="font-size: 1.5rem;"></i></a>
+							<a href="delProvE.php?id=<?php echo $idProv;?>"><i class="bi-trash" style="font-size: 1.5rem;"></i></a>
 						</td>
 					</tr>
 					<?php } ?>

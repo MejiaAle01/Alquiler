@@ -68,10 +68,10 @@
     <main>
       <section class="py-5">
         <div class="container">
-          <div class="row row-cols-1 row-cols-sm-3 g-3">
+          <div class="row row-cols-1 row-cols-sm-4 g-4">
             <div class="col">
               <div class="card border-dark bg-transparent">
-                <a class="btn btn-outline-dark fs-4 fw-bold text-white" href="historial/registrosA.php">
+                <a class="btn btn-outline-dark fs-4 fw-bold text-white" href="historial/reservasA.php">
                   <i class="bi-book" style="font-size: 8rem;">
                     <br>
                   </i>
@@ -96,6 +96,16 @@
                     <br>
                   </i>
                   Proveedores
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-dark bg-transparent">
+                <a class="btn btn-outline-dark fs-4 fw-bold text-white" href="motoristas/motoristasA.php">
+                  <i class="bi bi-file-earmark-person" style="font-size: 8rem;">
+                    <br>
+                  </i>
+                  Motoristas
                 </a>
               </div>
             </div>

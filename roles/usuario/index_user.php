@@ -59,7 +59,7 @@
 								<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 									<li class="text-center"><?php echo $_SESSION['usuario']; ?><hr class="dropdown-divider"></li>
 									<!-- Enlace que redirecciona a la pagina de ver registros -->
-									<li><a class="dropdown-item text-center" href="reservasU.php"> Mis reservas </a></li>
+									<li><a class="dropdown-item text-center" href="reservas/reservasU.php"> Mis reservas </a></li>
 									<!-- Enlace que redirecciona al archivo cerrar sesion.php -->
 									<li><a class="dropdown-item text-center" href="../../login/cerrar_sesion.php"> Cerrar sesión </a></li>
 								</ul>

@@ -75,17 +75,22 @@
 					<form action="rentU.php" method="POST" class="border rounded-3 shadow bg-light p-2">
 						<h4 class="mb-3 mt-2 text-center"> Información personal </h4>
 						<div class="row mb-3">
-							<!-- AQUI IRA EL NOMBRE DEL USUARIO TRAIDO DE LA BD -->
 							<label for="SelectedCar" class="col-sm-5 col-form-label"> Carro seleccionado: </label>
 							<div class="col-sm-6">
 								<input type="text" class="form-control" name="carselect" required value="<?php echo $marcaCar; ?>" disabled>
 							</div>
 						</div>
 						<div class="row mb-3">
+							<label for="price" class="col-sm-5 col-form-label"> Precio: </label>
+							<div class="col-sm-6">
+								<input type="number" readonly class="form-control" name="price" required value="50.00">
+							</div>
+						</div>
+						<div class="row mb-3">
 							<!-- AQUI IRA EL NOMBRE DEL USUARIO TRAIDO DE LA BD -->
 							<label for="Nombre" class="col-sm-5 col-form-label"> Nombre completo: </label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" name="nombre" required value="Alejandro">
+								<input type="text" class="form-control" name="nombre" required>
 							</div>
 						</div>
 						<div class="row mb-3">
@@ -102,7 +107,7 @@
 						</div>
 						<div class="row mb-3">
 							<label for="Categoria" class="col-sm-5 col-form-label"> Tipo de carro: </label>
-							<div class="col-sm-6">
+							<div class="col-sm-5">
 								<select name="tcar" class="form-select">
 									<option value="Estandar"> Estándar </option>
 									<option value="Automatico"> Automático </option>
@@ -117,40 +122,61 @@
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="FechaRetiro" class="col-sm-5 col-form-label"> Fecha de retiro: </label>
+							<label for="FechaRetiro" class="col-sm-5 col-form-label"> Fecha y hora de retiro: </label>
 							<div class="col-sm-6">
-								<input type="date" class="form-control" name="fretiro" value="">
+								<input type="datetime-local" class="form-control" name="fretiro" value="">
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="FechaDevol" class="col-sm-5 col-form-label"> Fecha de devolución: </label>
+							<label for="FechaDevol" class="col-sm-5 col-form-label"> Fecha y hora de devolución: </label>
 							<div class="col-sm-6">
-								<input type="date" class="form-control" name="fdevolucion" value="">
+								<input type="datetime-local" class="form-control" name="fdevolucion" value="">
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="Entrega" class="col-sm-8 col-form-label"> ¿Dónde quiere que este disponible? </label>
+							<label for="Entrega" class="col-sm-5 col-form-label"> Entrega por: </label>
+							<div class="col-sm-5">
+								<select name="entregaAlq" class="form-select">
+									<option value="Domicilio"> Domicilio </option>
+									<option value="Empresa"> Empresa </option>
+								</select>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<label for="Opciones" class="col-sm-5 col-form-label"> ¿Desea un motorista? </label>
 							<div class="col-sm-3">
-								<input type="checkbox" value="Domicilio" class="form-check-input" name="opdom" onclick="mostrarMot();">
-								<label for="OpDom" class="form-check-label"> Domicilio </label>
-								<input type="checkbox" value="Empresa" class="form-check-input ms-2" name="opemp">
-								<label for="OpEmp" class="form-check-label"> Empresa </label>
+								<input type="checkbox" value="Si" class="form-check-input" name="opsi" onclick="mostrarMot();"> Si
+								<input type="checkbox" value="No" class="form-check-input ms-2" name="opno"> No
 							</div>
 						</div>
 						<div class="row mb-3 mostrarM" id="mot">
 							<label for="Motorista" class="col-sm-5 col-form-label"> Seleccione un motorista: </label>
-							<div class="input-group w-50">
-								<span class="input-group-text"><i class="bi-person-bounding-box"></i></span>
-								<select name="motoristas" class="form-select">
-									<option value="1"> Jose Alejandro Mejia Ceron </option>
+							<div class="col-sm-7">
+								<select name="motorista" class="form-select">
+									<?php
+
+										$i = 0;
+
+										$execMot = mysqli_query($conn, "SELECT Nombre_mot FROM motoristas");
+										while ($filaMot = mysqli_fetch_assoc($execMot)){
+											echo '<option value="'.$filaMot['Nombre_mot'].'">'.$filaMot['Nombre_mot'].'</option>';
+										}
+
+										$i++;
+									?>
 								</select>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-sm-6">
+								<input type="hidden" class="form-control" name="state" value="Pendiente">
 							</div>
 						</div>
 
 						<!-- Boton que llamara al Modal -->
 						<div class="d-flex justify-content-center">
 							<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-credit-card"></i> Agregar tarjeta de crédito </button>
-							<button type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button"><i class="bi bi-clipboard-check"></i> Reservar </button>
+							<button type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button" name="ResForm"><i class="bi-clipboard-check"></i> Reservar </button>
 						</div>
 					</form>
 				</div>
@@ -228,8 +254,9 @@
 			document.getElementById('mot').style.display = 'block';
 		}
 	</script>
-
 	<!-- Enlace a las librerias de JavaScript de Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php mysqli_close($conn); ?>

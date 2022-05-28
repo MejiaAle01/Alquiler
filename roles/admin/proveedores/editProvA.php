@@ -18,6 +18,7 @@
 		$placasCP = $fila['Placas'];
 		$polCP = $fila['Poliza'];
 	}
+
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +80,7 @@
 				</div>
 				<div class="d-flex justify-content-center">
 					<button type="submit" class="btn btn-outline-primary" name="actualizar" role="button"> Actualizar </button>
-					<a class="btn btn-outline-secondary ms-2" href="proveedoresE.php"> Regresar </a>
+					<a class="btn btn-outline-secondary ms-2" href="proveedoresA.php"> Regresar </a>
 				</div>
 			</form>
 			<?php
@@ -100,7 +101,7 @@
 						echo 
 							'<script>
 								alert("Datos actualizados correctamente!");
-								window.location.href = "proveedoresE.php";
+								window.location.href = "proveedoresA.php";
 							</script>'
 						;
 					}

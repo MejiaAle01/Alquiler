@@ -1,14 +1,12 @@
 <?php
-	
 	// Conexion a la base de datos
 	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
-	// Comparamos el id que se presiono con el requerido
 	if (isset($_REQUEST['id'])) {
-		$delIDP = $_REQUEST['id'];
+		$idEnt = $_REQUEST['id'];
 
-		// Ejecutamos la consulta junto con la conexion
-		$exec = mysqli_query($conn, "DELETE FROM proveedores WHERE ID = '$delIDP'");
+		// Ejecutamos el query que actualizara el estado de la entrega
+		$exec = mysqli_query($conn, "DELETE FROM alquiler WHERE ID = '$idEnt'");
 
 		// Mostramos un mensaje de confirmacion
 		if ($exec) {
@@ -16,7 +14,7 @@
 				'<script>
 					confirm("¿Desea eliminar los datos?");
 					console.log("Datos eliminados correctamente!");
-					window.location.href = "proveedoresE.php";
+					window.location.href = "reservasE.php";
 				</script>'
 			;
 		}
