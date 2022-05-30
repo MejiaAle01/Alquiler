@@ -1,5 +1,6 @@
 <?php
-	
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
 	ob_start();
 ?>
 
@@ -14,11 +15,8 @@
 		// Conexion a la BD
 		$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
-		// Creamos una consulta a la BD
-		$cons = "SELECT * FROM alquiler INNER JOIN motoristas ON motoristas.ID_MOT = alquiler.MOT_ID";
-
 		//Ejecutamos la conexion y la consulta
-		$res = mysqli_query($conn, $cons);
+		$res = mysqli_query($conn, "SELECT * FROM alquiler INNER JOIN motoristas ON motoristas.Nombre_mot = alquiler.Name_mot");
 
 	?>
 

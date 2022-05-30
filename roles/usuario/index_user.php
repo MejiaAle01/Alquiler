@@ -91,7 +91,7 @@
 								<h3 class="fw-bold"> Nissan Sentra </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $50.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Nissan Sentra'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Nissan Sentra'; ?>&precio=50.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/sentra.html" 
                 role="button"> Ver detalles </a>
 							</div>

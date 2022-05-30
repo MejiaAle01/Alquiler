@@ -1,11 +1,13 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
     session_start();
 
     // Conexion a la base de datos
 	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
 	//Ejecutamos la conexion y la consulta
-	$res = mysqli_query($conn, "SELECT * FROM alquiler INNER JOIN motoristas ON motoristas.ID_MOT = alquiler.MOT_ID");
+	$res = mysqli_query($conn, "SELECT * FROM alquiler");
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +82,7 @@
 						<th scope="col"> Retiro </th>
 						<th scope="col"> Devolución </th>
 						<th scope="col"> Motorista </th>
-						<th scope="col"> Horario </th>
+						<!--<th scope="col"> Horario </th>-->
 						<th scope="col"> Entrega </th>
 						<th scope="col"> Total a pagar </th>
 						<th scope="col"> Estado </th>
@@ -102,8 +104,8 @@
 							$resAlq = $fila['Residencia'];
 							$f_retiroAlq = $fila['Fecha_ret'];
 							$f_devAlq = $fila['Fecha_dev'];
-							$nameAlqMot = $fila['Nombre_mot'];
-							$horarioMot = $fila['Horario'];
+							$nameAlqMot = $fila['Name_mot'];
+							//$horarioMot = $fila['Horario'];
 							$disAlq = $fila['Entrega'];
 							$pagoAlq = $fila['Total_pago'];
 							$stateAlq = $fila['Estado'];
@@ -123,12 +125,11 @@
 						<td><?php echo $f_retiroAlq; ?></td>
 						<td><?php echo $f_devAlq; ?></td>
 						<td><?php echo $nameAlqMot; ?></td>
-						<td><?php echo $horarioMot; ?></td>
+						<!--<td><?php //echo $horarioMot; ?></td>-->
 						<td><?php echo $disAlq; ?></td>
 						<td><?php echo '$'.$pagoAlq; ?></td>
 						<td><?php echo $stateAlq; ?></td>
 						<td>
-							<a href="entregasE.php?id=<?php echo $idAlq; ?>"><i class="bi-check2-square" style="font-size: 1.5rem; color: green;"></i></a>
 							<a href="cancelE.php?id=<?php echo $idAlq; ?>"><i class="bi-x-square-fill" style="font-size: 1.5rem; color: #ffc107;"></i></a>
 							<a href="delRE.php?id=<?php echo $idAlq; ?>"><i class="bi-trash" style="font-size: 1.5rem; color: red;"></i></a>
 						</td>

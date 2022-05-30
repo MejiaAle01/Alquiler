@@ -1,12 +1,15 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+
 	//Continuamos con la sesion
 	session_start();
 
 	// Conexion a la base de datos
 	$conn = mysqli_connect("localhost", "root", "", "alquiler") or die('Error al conectar a la BD');
 
-	if (isset($_REQUEST['car'])) {
-		$carselect = $_REQUEST['car'];
+	if (isset($_GET['car'])) {
+		$carselect = $_GET['car'];
 
 		//DATOS DE LOS CARROS DESDE LA BD
 		$cons = "SELECT Marca FROM proveedores WHERE Marca = '$carselect'";
@@ -77,13 +80,13 @@
 						<div class="row mb-3">
 							<label for="SelectedCar" class="col-sm-5 col-form-label"> Carro seleccionado: </label>
 							<div class="col-sm-6">
-								<input type="text" class="form-control" name="carselect" required value="<?php echo $marcaCar; ?>" disabled>
+								<input type="text" class="form-control" name="carselect" required value="<?php echo $marcaCar; ?>" readonly>
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="price" class="col-sm-5 col-form-label"> Precio: </label>
+							<label for="Precio" class="col-sm-5 col-form-label"> Precio: </label>
 							<div class="col-sm-6">
-								<input type="number" readonly class="form-control" name="price" required value="50.00">
+								<input type="text" step="any" class="form-control" name="precio" required readonly value="50.00">
 							</div>
 						</div>
 						<div class="row mb-3">
@@ -143,16 +146,10 @@
 							</div>
 						</div>
 						<div class="row mb-3">
-							<label for="Opciones" class="col-sm-5 col-form-label"> ¿Desea un motorista? </label>
-							<div class="col-sm-3">
-								<input type="checkbox" value="Si" class="form-check-input" name="opsi" onclick="mostrarMot();"> Si
-								<input type="checkbox" value="No" class="form-check-input ms-2" name="opno"> No
-							</div>
-						</div>
-						<div class="row mb-3 mostrarM" id="mot">
 							<label for="Motorista" class="col-sm-5 col-form-label"> Seleccione un motorista: </label>
-							<div class="col-sm-7">
+							<div class="col-sm-6">
 								<select name="motorista" class="form-select">
+									<option value="Sin motorista"> Sin motorista </option>
 									<?php
 
 										$i = 0;
@@ -167,16 +164,12 @@
 								</select>
 							</div>
 						</div>
-						<div class="row mb-3">
-							<div class="col-sm-6">
-								<input type="hidden" class="form-control" name="state" value="Pendiente">
-							</div>
-						</div>
+						<input type="hidden" name="state" value="Pendiente">
 
 						<!-- Boton que llamara al Modal -->
 						<div class="d-flex justify-content-center">
 							<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-credit-card"></i> Agregar tarjeta de crédito </button>
-							<button type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button" name="ResForm"><i class="bi-clipboard-check"></i> Reservar </button>
+							<button type="submit" class="btn btn-outline-primary ms-4" value="Reservar" role="button"><i class="bi-clipboard-check"></i> Reservar </button>
 						</div>
 					</form>
 				</div>
