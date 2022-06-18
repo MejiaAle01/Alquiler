@@ -70,7 +70,7 @@
         <div class="container">
           <div class="row row-cols-1 row-cols-sm-4 g-4">
             <div class="col">
-              <div class="card border-dark bg-transparent">
+              <div class="card border-dark border-3 bg-transparent">
                 <a class="btn btn-outline-dark fs-4 fw-bold text-white" href="historial/reservasA.php">
                   <i class="bi-book" style="font-size: 8rem;">
                     <br>

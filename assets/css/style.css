@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Google Fonts para footer*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 1rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+/* Variables de colores  botones,spam,etc*/
+:root {
+  --main-color: #d90429;
+  --text-color: #020102;
+  --bg-color: #fff;
+}
+
+body {     /*BODY ES EL CUERPO DE LA PAGINA*/
+  /*FONDO DE LA PAGINA Y FUENTE*/
+    background-image: url(https://www.hdcarwallpapers.com/walls/honda_civic_sedan_2019_4k_2-HD.jpg);
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
+
+}
+
+table {        /*ESTILO DE LA TABLA 1 TIPO FOOTER*/
+  background-color: #282d32;
+margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+#btnSesion {       /*BOTON PARA INICIAR SESION*/
+    padding: .6rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#btnRegistro {       /*BOTON PARA REGISTRARSE*/
+    padding: .6rem 1rem;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#btnPerfil {    /*BOTON DE VER PERFIL DE USUARIO*/
+  padding: .6rem 1rem;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#btnGo {        /*BOTON DE GESTIONAR RESERVA*/
+    padding: .6rem 1rem;
+    border-radius: 4px;
+    background-color: #d9750b;
+    color: #fff;
+    border: 2px solid(255, 255, 255);
+    font-size: 18px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+      0 1px 3px rgba(0,0,0,.2);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+    background-image: linear-gradient(#f90 10%,#e76a00 100%);
+    text-decoration: none;
+}
+
+          /*Atributos de quieres alquilar un auto*/
+.home  {
+  margin: auto;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+ 
+  background-position: center left;
+}
+.home-text {
+  padding-left: 10px;
+}
+.home-text h2 {
+  font-size: 2.2rem;
+    text-align: center;
+}
+.center{
+    text-align: center;
+}
+.home-text span {
+  color: var(--main-color);
+}
+
+.home-text .btn {
+  padding: 10px 22px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  font-weight: 400;
+  display:flow-root
+}
+
+.home-text .btn:hover {
+  background: #fd052f;
+}
+        /*FIN de atributos de quieres alquilar un auto*/
+        
+.SX82{           /*BOTON DE CLASS SPAN , VER MAS CARROS*/   /* EL (.) LLAMA A UNA CLASE EN ESPECIFICO*/
+    color: #000;
+    text-align: center;
+}
+
+/*Color de fondo para texto arriba de boton ver catalogo*/
+
+.description{
+    width: 79%;
+    background: rgba(0, 0, 0,.8);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description h1{
+    font-size: 22px;
+    color: red;
+    text-align: center;
+}
+.SX81 {
+  padding: .6rem 1rem;
+  border-radius: 4px;
+  background-color: #d9750b;
+  color: #fff;
+  border: 2px solid(255, 255, 255);
+  font-size: 18px;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.5)
+  box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 0 1px 3px rgba(0,0,0,.2);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+  background-image: linear-gradient(#f90 10%,#e76a00 100%);
+  text-decoration: none;
+}
+        /*Contenedor de autos index*/
+.cars-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+        /*Tamaño y posicion de cajas*/
+.cars-container .box {
+  flex: 1 1 17rem;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+  border-radius: 0.5rem;
+}
+        /*Tamaño y posicion de imagenes*/
+.cars-container .box img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  object-position: center;
+  margin-bottom: 1rem;
+}        
+        /*nombre de autos*/
+.cars-container .box h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+        /*Precios de autos*/
+.cars-container .box span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: red;
+}
+        /*Descripciones*/
+.cars-container .box .bx {
+  color: black;
+  margin: 0.1rem 0;
+    
+}
+        /*Tamaño y color de botones*/
+.cars-container .box .btn {
+  max-width: 120px;
+    padding: 10px 22px;
+  background: red;
+  color: white;
+  font-weight: 400;
+    margin-top: 0.5rem
+}
+        /*Efecto hover para botones de autos*/
+.cars-container .box .btn:hover {
+  background: #F25555;
+}
+        /*ver detalles de las box*/
+.cars-container .box .details {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 1.8rem;
+  right: 1rem;
+  font-size: 1rem;
+  color: blue;
+}
+        /*Efecto hover para ver detalles*/
+.cars-container .box .details:hover {
+  color: var(--main-color);
+  text-decoration: underline;
+}
+
+  
+
+
+        /* Fondo y color de texto */
+.footer {
+    
+  background: var(--text-color);
+  color: #f6f6f6;
+  border-top: 2px solid var(--main-color);
+}
+        /* Fondo y color de texto */
+.footer-container {
+    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+        /* texto badbunny posicion y color */
+.footer-container .logo {
+  color: var(--bg-color);
+  margin-bottom: 1rem;
+ text-align: center
+}
+        /* Posicion de items de footer(paginas,legal,contactanos)*/
+.footer-container .footer-box {
+  display: flex;
+  flex-direction: column;
+}
+       /* Iconos de redes sociales*/
+.social {
+  display: flex;
+  align-items: center;
+}
+.social a {
+  font-size: 24px;
+  color: var(--bg-color);
+  margin-right: 1rem;
+}
+.social a:hover {
+  color: var(--main-color);
+}
+    /*tamaño de letra, color y efecto hover*/
+.footer-box h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.footer-box a,
+.footer-box p {
+  color: #818181;
+  margin-bottom: 10px;
+}
+.footer-box a:hover {
+  color: var(--main-color);
+}
+        /* Fin del footer */
+.copyright {
+  padding: 20px;
+  text-align: center;
+  color: var(--bg-color);
+  background: var(--text-color);
+}
+
+.cars-container .box span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-color);
+}
+.cars-container .box .bx {
+  color: var(--main-color);
+  margin: 0.8rem 0;
+}

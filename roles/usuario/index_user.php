@@ -105,7 +105,7 @@
 								<h3 class="fw-bold"> Toyota Corolla </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $56.00 Diarios</span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Toyota Corolla'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Toyota Corolla'; ?>&precio=56.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/toyota.html" 
                 role="button"> Ver detalles </a>
 							</div>
@@ -118,7 +118,7 @@
 								<h3 class="fw-bold"> Kia Soul </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $60.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Kia Soul'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Kia Soul'; ?>&precio=60.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/kia.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -131,7 +131,7 @@
 								<h3 class="fw-bold"> Hyundai Accent </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $75.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Hyundai Accent'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Hyundai Accent'; ?>&precio=75.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/hyundai.html" 
                 role="button"> Ver detalles </a>
 							</div>
@@ -145,7 +145,7 @@
 								<h3 class="fw-bold"> Toyota Hilux </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $100.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Toyota Hilux'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Toyota Hilux'; ?>&precio=100.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/hilux.html" 
                 role="button"> Ver detalles </a>
 							</div>
@@ -158,7 +158,7 @@
 								<h3 class="fw-bold"> Toyota Prado </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $175.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Toyota Prado'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Toyota Prado'; ?>&precio=175.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/prado.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -172,7 +172,7 @@
 								<h3 class="fw-bold"> BMW Series 3 </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $250.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'BMW Series 3'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'BMW Series 3'; ?>&precio=250.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/bmw.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -183,9 +183,9 @@
 							<img src="../../assets/img/Camaro.jpg" alt="IMG_8" class="img-fluid">
 							<div class="card-body">
 								<h3 class="fw-bold"> Chevrolet Camaro </h3>
-                <span class="fw-bold fs-5" style="color: #d90429;"> $250.00 Diarios </span>
+                <span class="fw-bold fs-5" style="color: #d90429;"> $260.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Chevrolet Camaro'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Chevrolet Camaro'; ?>&precio=260.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/camaro.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -198,7 +198,7 @@
 								<h3 class="fw-bold"> Ford Mustang </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $300.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Ford Mustang'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Ford Mustang'; ?>&precio=300.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/mustang.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -211,7 +211,7 @@
 								<h3 class="fw-bold"> Masserati </h3>
                 <span class="fw-bold fs-5" style="color: #d90429;"> $550.00 Diarios </span>
                 <p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-                <a href="rentar.php?car=<?php echo 'Masserati'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+                <a href="rentar.php?car=<?php echo 'Masserati'; ?>&precio=550.00" class="btn btn-outline-danger" role="button"> Rentar </a>
                 <a class="btn btn-outline-danger" href="../../catalogo/maserati.html"
                 role="button"> Ver detalles </a>
 							</div>
@@ -219,13 +219,13 @@
 					</div>
 					<div class="col">
 						<div class="card shadow-sm">
-							<img src="https://mrglobalenter.com/wp-content/uploads/2020/06/CHEVROLET-SPARK-GT.jpg" alt="IMG_11" class="img-fluid">
+							<img src="https://www.chevrolet.com.pa/content/dam/chevrolet/na/mx/es/index/cars/2019-spark/colorizer/01-images/2019-spark-plata-brillante-imwidth=1200.png" alt="IMG_11" class="img-fluid">
 							<br>
 							<div class="card-body">
 								<h3 class="fw-bold"> Chevrolet Spark GT </h3>
 								<span class="fw-bold fs-5" style="color: #d90429;"> $160.00 Diarios </span>
 								<p class="card-text"><i class="bi-star"></i> (6 Reviews). </p>
-								<a href="rentar.php?car=<?php echo 'Chevrolet Spark GT'; ?>" class="btn btn-outline-danger" role="button"> Rentar </a>
+								<a href="rentar.php?car=<?php echo 'Chevrolet Spark GT'; ?>&precio=160.00" class="btn btn-outline-danger" role="button"> Rentar </a>
 								<a class="btn btn-outline-danger" href="../../catalogo/spark.html"
                                 role="button"> Ver detalles </a>
 							</div>

@@ -21,10 +21,12 @@
 	$price = $_POST['precio'];
 
 	//Calculamos el precio a pagar
-	//$total = $price * $cant;
+	$total = $price * $cant;
 
 	// PREPARAMOS LA SENTENCIA
-	$insert = "INSERT INTO alquiler (Marca, Fullname, CantCar, Tel, TipoCar, Residencia, Fecha_ret, Fecha_dev, Name_mot, Estado, Entrega, Total_pago) VALUES ('$marca', '$name', '$cant', '$tel', '$tipo_car','$resi', '$f_retiro', '$f_devo', '$nameMot', '$state', '$entrega', '$price')";
+	$insert = "INSERT INTO alquiler (Marca, Fullname, CantCar, Tel, TipoCar, Residencia, Fecha_ret, Fecha_dev, Name_mot, Estado, Entrega, Total_pago) VALUES ('$marca', '$name', '$cant', '$tel', '$tipo_car','$resi', '$f_retiro', '$f_devo', '$nameMot', '$state', '$entrega', '$total')";
+
+	echo '<script> alert("El total a pagar es de: $'.$total.'"); </script>';
 
 	// Ejecutamos la consulta
 	$res = mysqli_query($conn, $insert);
@@ -35,7 +37,7 @@
 			</script>'
 		;
 	} else {
-		echo '<script type="text/javascript">
+		echo '<script>
 				alert("Datos registrados correctamente, revise sus reservas!");
 				window.location.href = "index_user.php";
 			</script>'

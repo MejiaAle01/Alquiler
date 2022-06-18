@@ -67,8 +67,6 @@
 		</article>
 
 		<section class="container-fluid table-responsive mt-3">
-			<a href="../reportes/reportesU.php" class="btn btn-outline-danger m-1" role="button"><i class="bi-file-earmark-pdf-fill fst-normal"> Generar PDF </i></a>
-
 			<table class="table table-bordered table-hover table-striped">
 				<thead class="table-light">
 					<tr>
@@ -130,8 +128,9 @@
 						<td><?php echo '$'.$pagoAlq; ?></td>
 						<td><?php echo $stateAlq; ?></td>
 						<td>
+							<a href="#?id=<?php echo $idAlq; ?>" style="font-size: 1.5rem; color: red;"><i class="bi-file-earmark-pdf-fill fst-normal"></i></a>
 							<a href="cancelE.php?id=<?php echo $idAlq; ?>"><i class="bi-x-square-fill" style="font-size: 1.5rem; color: #ffc107;"></i></a>
-							<a href="delRE.php?id=<?php echo $idAlq; ?>"><i class="bi-trash" style="font-size: 1.5rem; color: red;"></i></a>
+							<a href="delRE.php?id=<?php echo $idAlq; ?>"><i class="bi-trash" style="font-size: 1.5rem;"></i></a>
 						</td>
 					</tr>
 				<?php } ?>
