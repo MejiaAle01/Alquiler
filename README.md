@@ -13,17 +13,17 @@ Este es un sistema de alquiler de vehiculos que proporciona un ticket en formato
 
 ## Instalación
 
-Para instalar el proyecto localmente, necesitarás previamente tener instalado XAMPP.
+- Descarga e Instala XAMPP.
 
-Ve a la carpeta htdocs y clona el proyecto:
+- En la carpeta **htdocs**, clona el repositorio:
 
 ```bash
   git clone https://github.com/MejiaAle01/Alquiler.git
 ```
 
-Ejecuta los servicios de Apache y MySQL de XAMPP.
+- Inicia los servicios de XAMPP.
 
-Para la base de datos en MySQL, ejecuta en un gestor de base de datos de tu preferencia el archivo: **BDAlquiler.sql**.
+- Para la base de datos, copia el contenido del archivo: **BDAlquiler.sql**, en un gestor de base de datos de tu preferencia pega el contenido.
     
 ## Stack utilizado
 
